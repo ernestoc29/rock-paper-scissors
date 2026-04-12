@@ -5,9 +5,9 @@ function getComputerChoice() {
     let num = Math.floor(Math.random() * 3);
     let computerChoice;
 
-    if (num == 0) {
+    if (num === 0) {
         computerChoice = "rock";
-    } else if (num == 1) {
+    } else if (num === 1) {
         computerChoice = "paper";
     } else {
         computerChoice = "scissors";
@@ -19,4 +19,25 @@ function getComputerChoice() {
 function getHumanChoice() {
     let choice = prompt("Choose rock, paper, or scissors");
     return choice.toLowerCase();
+}
+
+function playRound(human, computer) {
+    if (human === computer) {
+        console.log("Tie!");
+        return;
+    }
+
+    // human win conditions
+    const humanWin = 
+    (human === "rock" && computer === "scissors") || 
+    (human === "paper" && computer === "rock") || 
+    (human === "scissors" && computer === "paper");
+
+    if (humanWin) {
+        console.log(`You win! ${human} beats ${computer}.`);
+        humanScore++;
+    } else {
+        console.log(`You lose! ${computer} beats ${human}.`);
+    }
+
 }
