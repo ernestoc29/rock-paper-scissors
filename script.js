@@ -37,7 +37,20 @@ function playRound(human, computer) {
         console.log(`You win! ${human} beats ${computer}.`);
         humanScore++;
     } else {
-        console.log(`You lose! ${computer} beats ${human}.`);
+        console.log(`You lose! ${computer} beats ${human}.`)
+        computerScore++;
+    }
+}
+
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
     }
 
+    console.log(`You: ${humanScore}`);
+    console.log(`Computer: ${computerScore}`);
 }
+
+playGame();
