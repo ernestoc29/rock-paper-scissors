@@ -14,7 +14,7 @@ body {
     flex-direction: column;
     padding: 20px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
-    margin: 0 5% 0;
+    margin: 15px 5%;
     border-radius: 12px;
 }
 
@@ -97,6 +97,7 @@ body {
     font-weight: bold;
     font-size: 15px;
     border-radius: 12px;
+    cursor: pointer;
 }
 
 #rock {
@@ -115,4 +116,49 @@ body {
     background-color: #FEF6E6;
     border: 1px solid #FEE3B6;
     color: #F8A020
+}
+
+.logs-container {
+    display: flex;
+    background-color: #FEFEFE;
+    border: 1px solid #F1F1F3;
+    border-radius: 12px;
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    margin: 10px 40px;
+    flex-direction: column;
+}
+
+.log-header {
+    flex: 1;
+    font-weight: bold;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.logs {
+    padding: 5px 20px;
+}
+
+.log {
+   margin: 12px;
+   font-size: 15px; 
+   color: #6c6d6e;
+}
+
+.log:not(:last-child)::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #F5F7F9;
+  margin: 15px;
+}
+
+.lose {
+    color: #D83E3E;
+}
+
+.win {
+    color: #59A95D;
 }
