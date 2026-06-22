@@ -16,10 +16,10 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-function getHumanChoice() {
-    let choice = prompt("Choose rock, paper, or scissors");
-    return choice.toLowerCase();
-}
+// function getHumanChoice() {
+//     let choice = prompt("Choose rock, paper, or scissors");
+//     return choice.toLowerCase();
+// }
 
 function playRound(human, computer) {
     if (human === computer) {
