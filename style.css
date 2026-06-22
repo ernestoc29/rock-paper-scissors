@@ -1,0 +1,118 @@
+* {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #F6F8FA;
+}
+
+.game {
+    background-color: #FCFCFD;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 0 5% 0;
+    border-radius: 12px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin: 0;
+    font-size: 40px;
+}
+
+.subtitle {
+    margin: 0;
+    color: #6c6d6e;
+    font-weight: 400;
+}
+
+.score-container {
+    display: flex;
+    background-color: #FEFEFE;
+    border: 1px solid #F1F1F3;
+    border-radius: 12px;
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    margin: 10px 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.human-score-container, .comp-score-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 0;
+    align-items: center;
+    flex: 1;
+}
+
+.human-header, .human-score {
+    color: #2E72E2;
+    font-weight: bold;
+}
+
+.comp-header, .comp-score {
+    color: #D83E3E;
+    font-weight: bold;
+}
+
+.human-score, .comp-score {
+    font-size: 45px;
+}
+
+.versus {
+    color: #6c6d6e;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.choose {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    padding: 60px;
+    margin: 20px;
+    width: 250px;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 12px;
+}
+
+#rock {
+    background-color: #EBF4FD;
+    border: 1px solid #A6C3F2;
+    color: #3379E9
+}
+
+#paper {
+    background-color: #F0F8EF;
+    border: 1px solid #C1E0BE;
+    color: #59A95D;
+}
+
+#scissors {
+    background-color: #FEF6E6;
+    border: 1px solid #FEE3B6;
+    color: #F8A020
+}
