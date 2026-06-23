@@ -86,10 +86,12 @@ function checkGameOver() {
         resultContainer.style.display = "flex";
         
         if (humanScore === 5) {
+            resultContainer.classList.add("win");
             resultMsg.classList.add("win");
             resultMsg.textContent = "You win the game!";
             finalScore.textContent = `You ${humanScore} - ${compScore} Computer`;
         } else {
+            resultContainer.classList.add("lose");
             resultMsg.classList.add("lose");
             resultMsg.textContent = "You lose the game.";
             finalScore.textContent = `You ${humanScore} - ${compScore} Computer`;

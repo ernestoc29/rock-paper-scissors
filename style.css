@@ -198,3 +198,13 @@ body {
     color: #6c6d6e;
     font-size: 15px;
 }
+
+.result-container.win {
+    background-color: #F0F8EF;
+    border: 1px solid #C1E0BE;
+}
+
+.result-container.lose {
+    background-color: #f3d1d15c;
+    border: 1px solid #eb55558f;
+}
