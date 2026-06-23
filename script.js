@@ -1,5 +1,11 @@
+const humanScoreDisplay = document.querySelector(".human-score");
+const compScoreDisplay = document.querySelector(".comp-score");
+const buttons = document.querySelectorAll(".btns");
+
+
+
 let humanScore = 0;
-let computerScore = 0;
+let compScore = 0;
 
 function getComputerChoice() {
     let num = Math.floor(Math.random() * 3);
@@ -21,7 +27,14 @@ function getComputerChoice() {
 //     return choice.toLowerCase();
 // }
 
-function playRound(human, computer) {
+buttons.forEach(button => {
+    button.addEventListener("click", playRound);
+})
+
+function playRound(event) {
+    const human = event.target.id;
+    const computer = getComputerChoice();
+
     if (human === computer) {
         console.log("Tie!");
         return;
@@ -34,23 +47,22 @@ function playRound(human, computer) {
     (human === "scissors" && computer === "paper");
 
     if (humanWin) {
-        console.log(`You win! ${human} beats ${computer}.`);
-        humanScore++;
+        humanScore++
+        humanScoreDisplay.textContent = humanScore;
+
     } else {
-        console.log(`You lose! ${computer} beats ${human}.`)
-        computerScore++;
+        compScore++;
+        compScoreDisplay.textContent = compScore;
     }
 }
 
 function playGame() {
     for (let i = 0; i < 5; i++) {
-        const humanChoice = getHumanChoice();
+        const humanChoice = event.target.id;
         const computerChoice = getComputerChoice();
         playRound(humanChoice, computerChoice);
     }
 
     console.log(`You: ${humanScore}`);
-    console.log(`Computer: ${computerScore}`);
+    console.log(`Computer: ${compScore}`);
 }
-
-playGame();
