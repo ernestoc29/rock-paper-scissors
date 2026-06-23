@@ -167,8 +167,12 @@ body {
     color: #6c6d6e9f;
 }
 
+.disabled {
+    cursor: not-allowed; 
+}
+
 .result-container {
-    display: flex;
+    display: none;
     background-color: #FEFEFE;
     border: 1px solid #F1F1F3;
     border-radius: 12px;

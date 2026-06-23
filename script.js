@@ -1,11 +1,13 @@
 const humanScoreDisplay = document.querySelector(".human-score");
 const compScoreDisplay = document.querySelector(".comp-score");
-const buttons = document.querySelectorAll(".btns");
+const buttons = document.querySelectorAll(".btn");
 
 const logsContainer = document.querySelector(".logs");
 const log = document.querySelectorAll(".log");
 
 const finalScore = document.querySelector(".final-score");
+const resultContainer = document.querySelector(".result-container");
+const resultMsg = document.querySelector(".msg");
 
 
 let humanScore = 0;
@@ -25,11 +27,6 @@ function getComputerChoice() {
 
     return computerChoice;
 }
-
-// function getHumanChoice() {
-//     let choice = prompt("Choose rock, paper, or scissors");
-//     return choice.toLowerCase();
-// }
 
 buttons.forEach(button => {
     button.addEventListener("click", playRound);
@@ -75,16 +72,32 @@ function playRound(event) {
     }
 
     newLog.appendChild(resultSpan);
-    logsContainer.prepend(newLog)
+    logsContainer.prepend(newLog);
+
+    if (logsContainer.children.length > 3) {
+        logsContainer.lastElementChild.remove();
+    }
+
+    checkGameOver();
 }
 
-// function playGame() {
-//     for (let i = 0; i < 5; i++) {
-//         const humanChoice = event.target.id;
-//         const computerChoice = getComputerChoice();
-//         playRound(humanChoice, computerChoice);
-//     }
+function checkGameOver() {
+    if (humanScore === 5 || compScore === 5) {
+        resultContainer.style.display = "flex";
+        
+        if (humanScore === 5) {
+            resultMsg.classList.add("win");
+            resultMsg.textContent = "You win the game!";
+            finalScore.textContent = `You ${humanScore} - ${compScore} Computer`;
+        } else {
+            resultMsg.classList.add("lose");
+            resultMsg.textContent = "You lose the game.";
+            finalScore.textContent = `You ${humanScore} - ${compScore} Computer`;
+        }
 
-//     console.log(`You: ${humanScore}`);
-//     console.log(`Computer: ${compScore}`);
-// }
+        buttons.forEach(button => {
+            button.classList.add("disabled")
+            button.disabled = true;
+        });
+    }
+}
