@@ -163,6 +163,10 @@ body {
     color: #59A95D;
 }
 
+.tie {
+    color: #6c6d6e9f;
+}
+
 .result-container {
     display: flex;
     background-color: #FEFEFE;
@@ -183,6 +187,7 @@ body {
 
 .msg {
     font-size: 20px;
+    font-weight: bold;
 }
 
 .final-score {
